@@ -14,7 +14,7 @@ def get_rss
 end
 
 def check_date(rss)
-  file_name = 'update_time.txt'
+  file_name = File.join(__dir__, 'update_time.txt')
   new_date = rss.channel.pubDate
   old_date = nil
   if File.exist?(file_name)
@@ -35,7 +35,7 @@ def check_date(rss)
 end
 
 def post_slack(item)
-  file_name = 'config.yml'
+  file_name = File.join(__dir__, 'config.yml')
   slack_url = ''
   channel = ''
   username = ''
