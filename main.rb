@@ -51,9 +51,7 @@ def post_slack(item)
   title = item.title
   link = item.link
   payload = {
-    'channel' => '#' + channel,
-    'username' => username,
-    'text' => title + "
+    'content' => title + "
       " + link
   }
 
